@@ -894,7 +894,7 @@ instance Contiguous (SmallUnliftedArray_ unlifted_a) where
   type Sliced (SmallUnliftedArray_ unlifted_a) = Slice (SmallUnliftedArray_ unlifted_a)
   type MutableSliced (SmallUnliftedArray_ unlifted_a) = MutableSlice (SmallUnliftedArray_ unlifted_a)
   {-# INLINE new #-}
-  new n = newSmallUnliftedArray n errorThunk
+  new n = unsafeNewSmallUnliftedArray n
   {-# INLINE empty #-}
   empty = emptySmallUnliftedArray
   {-# INLINE index #-}
